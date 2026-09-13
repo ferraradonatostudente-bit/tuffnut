@@ -126,6 +126,81 @@ li {
   margin-top: 20px;
 }
 
+.menu-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.menu-card {
+  background: linear-gradient(135deg, #222 0%, #1a1a1a 100%);
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 30px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.menu-card:hover:not(.placeholder) {
+  border-color: #d96b2b;
+  background: linear-gradient(135deg, #2a2a2a 0%, #222 100%);
+  box-shadow: 0 8px 16px rgba(217, 107, 43, 0.3);
+  transform: translateY(-5px);
+}
+
+.menu-card h3 {
+  color: #d96b2b;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+}
+
+.menu-card p {
+  color: #aaa;
+  flex-grow: 1;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.menu-arrow {
+  color: #d96b2b;
+  font-size: 24px;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover:not(.placeholder) .menu-arrow {
+  transform: translateX(5px);
+}
+
+.menu-card.placeholder {
+  background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+  border-color: #333;
+  opacity: 0.6;
+}
+
+.menu-card.placeholder h3 {
+  color: #888;
+}
+
+.menu-card.placeholder p {
+  color: #666;
+}
+
 footer {
   text-align: center;
   padding: 25px;
@@ -151,5 +226,13 @@ footer {
 
   .intro h2 {
     font-size: 34px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    min-height: 200px;
   }
 }
